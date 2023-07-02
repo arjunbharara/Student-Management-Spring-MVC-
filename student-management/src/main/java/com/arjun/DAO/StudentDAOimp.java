@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import com.arjun.api.Student;
 import com.arjun.api.StudentDTO;
@@ -36,7 +37,32 @@ public class StudentDAOimp implements StudentDAO {
 		
 	     jdbctemp.update(sql,sqlParamters);
 	     
-	     System.out.println("1 record updated");
+	     System.out.println("1 record inserted");
 	}
+
+	@Override
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		String sql="select *from students where id=?";
+		Student student=jdbctemp.queryForObject(sql,new StudentRowMapper(),id);
+		return student;
+	}
+
+	@Override
+	public void update(StudentDTO studentdto) {
+		
+		String sql="update students set  name=?, mobile=?, country=? where id=?";
+		jdbctemp.update(sql,studentdto.getName(),studentdto.getMobile(),studentdto.getCountry(),studentdto.getId());
+		System.out.println("1 record updated");
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+		// TODO Auto-generated method stub
+		String sql="DELETE FROM STUDENTS WHERE ID=?";
+		jdbctemp.update(sql,id);
+	}
+
+	
 
 }

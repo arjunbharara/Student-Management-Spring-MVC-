@@ -34,7 +34,7 @@ public class MyAppconfig {
 		DriverManagerDataSource datasource=new DriverManagerDataSource();
 		datasource.setUsername("root");
 		datasource.setPassword("bhararaarjun03");
-		datasource.setUrl("jdbc:mysql://localhost:3306/eclipse_project?useSSL=false");
+		datasource.setUrl("jdbc:mysql://localhost:3306/eclipse_project?allowPublicKeyRetrieval=true&useSSL=False");
 		datasource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return datasource;
 	}

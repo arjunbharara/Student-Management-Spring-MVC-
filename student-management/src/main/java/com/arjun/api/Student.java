@@ -4,7 +4,7 @@ public class Student {
  private int id;
  private String name;
  private String country;
- private long mobile;
+ private Long mobile;
  
 public int getId() {
 	return id;
@@ -24,10 +24,11 @@ public String getCountry() {
 public void setCountry(String country) {
 	this.country = country;
 }
-public long getMobile() {
+
+public Long getMobile() {
 	return mobile;
 }
-public void setMobile(long mobile) {
+public void setMobile(Long mobile) {
 	this.mobile = mobile;
 }
 @Override

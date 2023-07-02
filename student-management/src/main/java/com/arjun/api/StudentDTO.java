@@ -4,7 +4,7 @@ public class StudentDTO {
 	private String name;
 	private String country;
 	private int id;
-	private long mobile;
+	private Long mobile;
 	
 	public String getName() {
 		return name;
@@ -24,15 +24,16 @@ public class StudentDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public long getMobile() {
+
+	public Long getMobile() {
 		return mobile;
 	}
-	public void setMobile(long mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 	@Override
 	public String toString() {
-		return "StudentDTO [name=" + name + ", country=" + country + ", mobile=" + mobile + "]";
+		return "StudentDTO [name=" + name + ", country=" + country + ", id=" + id + ", mobile=" + mobile + "]";
 	}
 	
 }
